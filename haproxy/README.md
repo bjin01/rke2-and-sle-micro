@@ -51,6 +51,16 @@ The haproxy host then forwards the request to the configured backend nodes which
 
 Below is the important part of haproxy.cfg for my test rke2 cluster.
 
+Configure haproxy to passthrough tcp requests to the backend I made below config in the defaults section:
+```
+defaults
+  mode    tcp
+  option  tcplog
+  .
+  .
+  .
+```
+And configured fontend and backends:
 ```
 frontend rkeapi
   bind *:6443
