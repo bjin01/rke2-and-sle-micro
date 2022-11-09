@@ -1,0 +1,29 @@
+variant: fcos
+version: 1.4.0
+storage:
+  files:
+    - path: /etc/hostname
+      mode: 0644
+      overwrite: true
+      contents:
+        inline: mymicro1
+    - path: /etc/vconsole.conf
+      mode: 0644
+      overwrite: true
+      contents:
+        inline: KEYMAP=de
+    - path: /etc/ssh/sshd_config.d/20-enable-passwords.conf
+      mode: 0644
+      contents:
+        inline: |
+          # This file must sort before 40-disable-passwords.conf.
+          PasswordAuthentication yes
+  links:
+    - path: /etc/localtime
+      target: ../usr/share/zoneinfo/Europe/Vienna
+      overwrite: true
+passwd:
+  users:
+    - name: root
+      ssh_authorized_keys:
+        - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCLP8ivwq...

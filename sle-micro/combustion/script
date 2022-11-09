@@ -1,0 +1,12 @@
+#!/bin/bash
+echo 'root:$y$j9T$xxx' | chpasswd -e
+# combustion: network
+RESULT=`SUSEConnect -s`
+VAL="Not Registered"
+if [[ "$RESULT" == *"$VAL"* ]]
+then  
+    SUSEConnect -r xxxxxxxxxxxxx 
+fi
+
+
+
