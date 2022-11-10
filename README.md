@@ -1,10 +1,10 @@
 # Deploy SLE-Micro and rke2
 
 ## Prep ignition, combustion and disk with label
-![ignition-readme](./ignition/README.md)
+[ignition-readme](./sle-micro/ignition/README.md)
 
 ## Create the KVM VM and start SLE-Micro
-![libvirt-readme](./libvirt/README.md)
+![libvirt-readme](./sle-micro/README.md)
 
 ## Install and configure DNS and external load balancer prior rke installation
 ![dnsmasq-and-haproxy](./haproxy/README.md)
